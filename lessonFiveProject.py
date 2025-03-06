@@ -1,6 +1,8 @@
-# lessonFiveProject.py
+# Lesson 5: Managing Favorite Foods and TV Shows
 
-# Engage and Apply -------------------------------> Exercise 1 (Pre-provided)
+# ============================
+# Engage and Apply -----------> Exercise 1 (Pre-provided)
+# ============================
 
 """
 Task: Create a simple Python program that:
@@ -42,7 +44,9 @@ def main():
 
 main()
 
-# Engage and Apply -------------------------------> Exercise 1 (My Interpretation Applied)
+# ============================
+# Engage and Apply -----------> Exercise 1 (My Interpretation Applied)
+# ============================
 
 """
 Task: Create a simple Python program that:
@@ -104,7 +108,9 @@ def main():
 
 main()
 
-# Final Challenge ---------------------> Final Challenge (Pre-provided)
+# ============================
+# Final Challenge -----------> Final Challenge (Pre-provided)
+# ============================
 
 """
 Scenario: Modify the TV show manager program to allow the user to edit the platform or genre of an existing TV show.
@@ -191,7 +197,9 @@ def main():
 if __name__ == '__main__':
     main()
 
-# Final Challenge ---------------------> Final Challenge (My Interpretation Applied)
+# ============================
+# Final Challenge -----------> Final Challenge (My Interpretation Applied)
+# ============================
 
 """
 Scenario: Modify the TV show manager program to allow the user to edit the platform or genre of an existing TV show.
@@ -241,47 +249,3 @@ def view(shows):
 def remove_show(shows):
     view(shows)
     option = int(input("\n\nChoose a number for the show you'd like to remove: "))
-    show = shows.pop(option - 1)  # index - 1
-    print(f"\n{show['Title']} was successfully removed!")
-    write_show(shows)
-
-# Function to edit platform or genre of a show
-def edit_show(shows):
-    view(shows)
-    option = int(input("Choose a number to edit: "))
-    field = input("Do you want to edit the platform or genre? (Enter 'platform' or 'genre'): ").lower()
-    if field == 'platform':
-        new_platform = input("Enter new platform: ")
-        shows[option - 1]['Platform'] = new_platform
-    elif field == 'genre':
-        new_genre = input("Enter new genre: ")
-        shows[option - 1]['Genre'] = new_genre
-    write_show(shows)
-    print(f"Show updated: {shows[option - 1]}")
-
-# Main function to run the TV show manager
-def main():
-    while True:
-        shows_list = read_shows()
-        action = input('''Options:
-        1 - Add a TV Show
-        2 - Remove a TV Show
-        3 - View List of TV Shows
-        4 - Edit a TV Show
-        5 - Quit
-        ''')
-        if action == '1':
-            add_show(shows_list)
-        elif action == '2':
-            remove_show(shows_list)
-        elif action == '3':
-            view(shows_list)
-        elif action == '4':
-            edit_show(shows_list)  # Allow user to edit a show
-        elif action == '5':
-            print("Thanks for using the app!")
-            break
-
-# Call main() to start the program
-if __name__ == '__main__':
-    main()
